@@ -202,74 +202,139 @@ The mechanism:
 3) If the predicted output $h_\theta (x^{(i)})$ == the actial output $y^{(i)}$ then we don't make any change.  
 4) Otherwise, $y^{(i)}-h_\theta (x^{(i)})$ will be either `1` or `0` and out `update rule` will `tilt` $\theta$ , hence the `decision boundary` in the requisite direction (try running it on the example in the picture).  
 Geometrically:  
-* We add a component of $x$, specifically, $\alpha x$ to $\theta$ resulting in $\theta'$. 
+* We add a component of $x$, specifically, $\alpha x$ to $\theta$ resulting in $\theta'$. This `tilts` $\theta$ in the `required direction` 
   
 <p align="center">
 <img width="257" alt="Screenshot 2023-04-04 at 5 41 29 PM" src="https://user-images.githubusercontent.com/97736991/229787375-5f930efd-bf70-419b-b6f4-ea747482cd9a.png"></p>
 
 
+* Such a strict decision boundary will fail in classifying something like this.
+<p align="center">
+<img width="162" alt="Screenshot 2023-04-04 at 5 44 13 PM" src="https://user-images.githubusercontent.com/97736991/229787958-ef186f1b-f2ab-4fcb-a37f-b2f262968003.png"> </p>
+
+* In the `Perceptron Algorithm`, we essentially demand that all points of `label 1` are on `one side` of the boundary, and all points of `label 0` are on other side of the boundary. This can't accomodate `noisy data` i.e. some not very well fitting exaples.
+
+
+# Exponential Family
+
+<p align="center">
+<img width="491" alt="Screenshot 2023-04-04 at 5 54 18 PM" src="https://user-images.githubusercontent.com/97736991/229790559-57071c65-9077-44ba-87b4-2869e7f6079a.png"> </p>
+* The above should integrate to `1` for a valid choics of the following parameters. 
+* y : Data (scalar)
+* η : `Natural Parameter`/ `Canonical parameter`  (vector) 
+* $T(y)$ : Sufficient statistic  (vector with same dimension as η)
+* a(η) : Log partition function (scalar)
+* b(η) : Base Measure  (scalar)
+
+#### We will try to `manipulate` the `pdf` given ti us into the `above` form. 
+Example: 
+### Bernoulli Distribution**  
+
+<p align="center">
+<img width="715" alt="Screenshot 2023-04-04 at 6 08 18 PM" src="https://user-images.githubusercontent.com/97736991/229793962-ed99c251-73b5-47d4-b8ba-60ffac70baa3.png"></p> 
+
+which leads to: 
+<p>
+<img width="300" alt="Screenshot 2023-04-04 at 6 09 39 PM" src="https://user-images.githubusercontent.com/97736991/229794306-0721fe59-a87f-4602-ab19-7ff860403f79.png">
+    &ensp;&ensp;&ensp;&ensp;&ensp;
+
+<img width="80" alt="Screenshot 2023-04-04 at 6 10 29 PM" src="https://user-images.githubusercontent.com/97736991/229794527-02ebc4a3-6d88-43e5-9e97-5301d0460674.png">
+<img width="168" alt="Screenshot 2023-04-04 at 6 10 19 PM" src="https://user-images.githubusercontent.com/97736991/229794480-388bb73f-a3ad-4233-8179-64914501c851.png">
+</p>
+<img width="337" alt="Screenshot 2023-04-04 at 6 09 53 PM" src="https://user-images.githubusercontent.com/97736991/229794367-5be8373a-394f-4840-8c8d-a93eea5b7ac3.png">
 
 
 
 
+So it verifies that the `Bernoulli Distribution` is a member of `Exponential Familiy` (as we are able to solve for all the parameters explicitly)
+
+### Gaussian distribution
+
+<p align="center">
+<img width="918" alt="Screenshot 2023-04-04 at 6 15 36 PM" src="https://user-images.githubusercontent.com/97736991/229795803-b68cdeac-e4f5-4bc1-8699-4cb4325c8391.png"> </p>
 
 
 
 
+* Gaussians with any variance $σ^2$ beling to the `Exponential Family`. It has been skipped here.  
+
+### Properties if Exponential Family
+* `MLE` (`Maximum Likelyhood`) w.r.t. η is `concave`. 
+* `NLL` (`Negattive Log Likelyhoood`) is  `convex` (it's a minimisation problem)
+* $E[y;η] = \frac{\partial &ensp;a(η)}{\partial η}$
+* $Var[y,η] = \frac{\partial^2 &ensp;a(η)}{\partial η^2}$
+
+    Real values Data: Gaussian
+    Binary Data: Bernoulli 
+    Count(non-negative integers): Poisson 
+    Positive Reals: Gamma/ Exponential 
+    pdf over pdf: Beta, Dirichlet } Part of Bayesion Statistics 
+
+# Generalised Linear Models (GLM's)
+### Assumptions/ Design Choices 
+1) $y|x;\theta$ ~ Exponential(η)
+2) $η = \theta^Tx$ where $\theta,x \in \Re^n$, where $n$ is the dimension of the input
+3) Test time: $h_\theta(x) = E[y|x;\theta]$ 
 
 
 
 
+<p align="center">
+<img width="828" alt="Screenshot 2023-04-04 at 6 44 18 PM" src="https://user-images.githubusercontent.com/97736991/229803038-63c69781-645a-4f32-94ab-fb13a34330c0.png"></p>
+
+* Note that we are `learning` $\theta$.  
+* In the bigger picture, we get a scalar $η = \theta^Tx$ from the input $x$, vector. Then we put it in a suitable `p.d.f.` to get the output (The `hypothesos value`). This is basically the `GLM`. 
+
+## Training the `GLM` 
+* Good News: Whatever `funciton` we take from the `exponential family`, the `Learning Rule` is the same:     
+For `Batch Gradient Descent`: 
+<p align="center">
+<img width="804" alt="Screenshot 2023-04-04 at 6 49 45 PM" src="https://user-images.githubusercontent.com/97736991/229805113-e531ebef-6575-4e8f-84fb-e08b0ab25419.png"></p>
+
+
+For `Stochastic Gradient Descent`:  
+<p align="center">
+<img width="862" alt="Screenshot 2023-04-04 at 6 50 26 PM" src="https://user-images.githubusercontent.com/97736991/229805442-ac449520-35a6-447e-9b0c-d5b7fe42e5c1.png"></p>
+
+* We have generalised, `Regression`, `Classification` and everything into one class. 
 
 
 
+* $\mu = E[y;η] = \frac{\partial &ensp;a(η)}{\partial η} = g(η)$ = `Canonical Response function` 
+* $η = g^{-1}(\mu)$ : `Canonical Link function` 
+
+### 3 parameters 
+1) Model Parameter: $\theta$
+2) Natural Parameter: $\eta$
+3) Canonical parameters: Bernoulli($\phi$), Gaussian($\mu,\sigma^2$), Poisson($\lambda$).       
+Note:       
+       $\theta^Tx \to \eta$  (1 --> 2).   
+       $g(\eta) \to \mu$    (2 --> 3). Note that the `mean` in poisson equals $\lambda$ and that in Bernoulli equals $\phi$  
+       $g^{-1}(\mu) \to \eta$  (3 --> 2).          
 
 
+* `Logistic` regression is just using Bernoulli 
+* If we want to predict the number of visitors on a website, we use `Poisson`
+
+* For the `Gaussian`, we assume `variance = 1`
+<p align="center">
+<img width="794" alt="Screenshot 2023-04-04 at 7 24 51 PM" src="https://user-images.githubusercontent.com/97736991/229815343-c1f73e53-df54-4d24-8909-131799d4fa13.png"></p>
 
 
+<p align="center">
+<img width="606" alt="Screenshot 2023-04-04 at 7 26 13 PM" src="https://user-images.githubusercontent.com/97736991/229815786-ce88e68b-154e-4005-b581-1b9c1445d5c2.png">></p>
+
+## Softmax Regression (non-GLM approach)
+* Extending the idea of `Binary Classification`, we wish to classify into `n categories` {Say Dog, Cat, Hanster...}
+* Cross Entropy 
+<p align="center">
+<img width="443" alt="Screenshot 2023-04-04 at 7 28 21 PM" src="https://user-images.githubusercontent.com/97736991/229816382-b38bb793-dad2-4d51-9bb1-b7c0e6662122.png"></p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* $k$ classes 
+* $x^{(i)} \in \Re^n$ 
+* $\theta_{class} \in \Re^n$
+* $class \in \\{ object_1, object_2......opject_k\\}$
 
 
 
