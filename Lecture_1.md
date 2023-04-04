@@ -178,30 +178,34 @@ We interpret the output as:
 
 # Perceptron Algorithm 
 
+    g(z) = 1 if z >= 0
+           0 otherwise 
+    
 
+* The update rule is still the same.   
+<p align="center">
+<img width="600" alt="Screenshot 2023-04-04 at 4 56 28 PM" src="https://user-images.githubusercontent.com/97736991/229777534-8aaa3b86-4732-460b-a7ac-4834a4ba8100.png"></p>
 
+* Go over, example by example in an online manner (use the `stochastic descent` update rule) and keep updating the `decision boundary`
 
+$y^{(i)}-h_\theta (x^{(i)})= $   
+ &ensp; 0   if algorithm get's it right.  
+ &ensp; 1   if $y^{(i)} = 1$ and $h_\theta (x^{(i)})= 0$      
+-1   if $y^{(i)} = 0$ and $h_\theta (x^{(i)})= 1$
 
+<p align="center">
+<img width="768" alt="Screenshot 2023-04-04 at 5 32 34 PM" src="https://user-images.githubusercontent.com/97736991/229785556-448913b3-9d5d-49ba-bd95-f7792764411f.png"></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The mechanism:   
+1) We intially have a vector $\theta$ and the corresponding `decision boundary`. (they will be normal to each other).  
+2) We add a new `training example` to the `training set`.  
+3) If the predicted output $h_\theta (x^{(i)})$ == the actial output $y^{(i)}$ then we don't make any change.  
+4) Otherwise, $y^{(i)}-h_\theta (x^{(i)})$ will be either `1` or `0` and out `update rule` will `tilt` $\theta$ , hence the `decision boundary` in the requisite direction (try running it on the example in the picture).  
+Geometrically:  
+* We add a component of $x$, specifically, $\alpha x$ to $\theta$ resulting in $\theta'$. 
+  
+<p align="center">
+<img width="257" alt="Screenshot 2023-04-04 at 5 41 29 PM" src="https://user-images.githubusercontent.com/97736991/229787375-5f930efd-bf70-419b-b6f4-ea747482cd9a.png"></p>
 
 
 
