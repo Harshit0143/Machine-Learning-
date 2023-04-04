@@ -335,19 +335,39 @@ Note:
 * $x^{(i)} \in \Re^n$ 
 * $\theta_{class} \in \Re^n$
 * $class \in \\{ object_1, object_2......opject_k\\}$
+* The `featurs` of all the classes are same. The `weights` are different i.e. $S_i = \\{\theta_j ; j = 1, 2......d\\}$ for $i \in {1, 2....k}$ the $S_i's$ are different. 
+* So for each class $class_i$ we have the `Decisioin Boundary` $\theta_i^Tx = 0$, the boundary of `in class_i` and `not in class_i`
+* The below is a very `beautiful/ ideal` exapmple where there is no overlapping. 
 
 
+<p align="center">
+<img width="533" alt="Screenshot 2023-04-04 at 9 37 51 PM" src="https://user-images.githubusercontent.com/97736991/229852108-0816a253-41da-4e44-98d7-a6eae3ee59c9.png"> </p>
+
+* Logit Space
+* Choose the $x$ you want to predict.
+* Calculate $\theta_i^Tx$ for each $i = 1, 2, 3.....k$
+* Exponenentiate the values 
+* Normalise them (so that sum of falues for  $i = 1, 2, 3.....k$ is 1
+* You have the probabilities. $P_i$ = Probability that the predicted `point` lies in $class_i$ 
+* Define $\hat{p}(y)$ as the predicted value
 
 
+<p align="center">
+<img width="946" alt="Screenshot 2023-04-04 at 9 41 14 PM" src="https://user-images.githubusercontent.com/97736991/229852902-6f74995b-d61a-4cb9-a7c7-3f5249640a96.png"></p>
+
+### How to learn? We still don't know how to get $\theta_i$ 
+* We try to minimise the `Cross entropy` between $p(y)$ and $\hat{p}(y)$. 
 
 
+<p align="center">
+<img width="707" alt="Screenshot 2023-04-04 at 9 52 37 PM" src="https://user-images.githubusercontent.com/97736991/229855612-2e796495-85ab-48ec-98f7-dab9ec1e9a27.png">></p>
+* Use `Gradient Descent` now   
 
 
-
-
-
-
-
+# GDA (Gaussian Discriminant Analysis) 
+* In `Logistic Regression`, we try to make a `linear` `decision boundary` using the training set.
+* In GDA, we consider each `label`, `separately`, make a `model`, then then we have to make prediction on $x$, we see which model it matches to.
+* It is simpler and sometimes computationally more efficient. 
 
 
 
