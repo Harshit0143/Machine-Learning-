@@ -101,5 +101,225 @@ We obtain the `Normal Equation`:
 
 
 
+# Locally Weighted Regression 
+
+
+## Parametric Learning Algorithms 
+* It is not necessary that the ```hypothesis``` is linear in the `features`
+* How do we devise if the `hypothesis` should depeend on $sqrt(x)$ or $x^2$ or $log(x)$ 
+* `Feature selection Algorithm` does that 
+### Parametric Learning Algorithm (eg `Linear Regression`)
+* Fit fixed set of Parameters ($\theta _i 's$ in linear regression)
+### Non-Parametric Learning Algorithm (eg `Locally Weighted Regression`) 
+* Amount of `Data/ Parametes` stored grows (here linearly) with size of `training set`
+* So it is not very suitable for a very large `training set`
+
+Algorithm 
+<p align="center">
+<img width="800" alt="Screenshot 2023-04-04 at 2 59 34 PM" src="https://user-images.githubusercontent.com/97736991/229749603-c14cb29e-9291-4638-bdc3-0b2c0b00d720.png"></p>
+
+<p align="center"><img width="400" alt="Screenshot 2023-04-04 at 3 01 53 PM" src="https://user-images.githubusercontent.com/97736991/229750228-a566125e-a71a-412e-9020-1c58dff3839e.png">
+</p>
+
+ 
+
+#### here $\tau$ is a chosen `appropriately` {How much we want $w^{(i)}$ to decay with distance from $x$}
+#### value of $\tau$ has an effect on overfitting and underfitting the data. 
+
+* So bascallly, we are giving more `weight` to the points `close` to the $x$ where we want to predict
+* Compute the weights $w^{(i)}$ at the desired $x$, then get the $\theta _i's$ using any of the prvious Algorithms. Then get $h(x)$
+
+
+# Probabilistic Interpretation to `Linear Regression`
+#### Why use `Squared Error` in the `cost expression`? 
+# $$y^{(i)} = \theta ^T x^{(i)} + \epsilon^{(i)}$$ 
+* where $\epsilon^{(i)}$ is an `error` term carrying `unmodelled` effects like `noise`. $\epsilon^{(i)}$ is distributed `Normally` with mean `0` and variance $\sigma ^2$. 
+
+* $\epsilon^{(i)} ; i = 1, 2,3 .....n$ are assumed `i.i.d.` which is not vary valid (for example, if due to some reason, the housing price on a street is high, it will make the prices of the other houses on the street also high.  
+# LEFT FOR ANOTHER DAY  
+
+
+# Logistic Regression (Classification)
+
+## Binary Classification
+### Terminologies 
+* Binary Classification ==> $y ∈ \\{0, 1\\}$
+* $1$ or `Positive Class` or $+$
+* $0$ or `Negative Class` or $-$ 
+* given `training example` $(x^{(i)},y^{(i)})$ , $y^{(i)}$ is called the `label` of $x^{(i)}$  
+Clearly, using `Linear Regression` here is pointless, $0$ and $1$ are `labels` to represent classes, ther values doesn't concern us. 
+
+We use the `sigmoid function`/ `logistic function`. 
+<p align="center">
+<img width="484" alt="Screenshot 2023-04-04 at 3 51 44 PM" src="https://user-images.githubusercontent.com/97736991/229762923-c0071761-f8d9-4d5c-874c-25241a2fb350.png"> </p> 
+We interpret the output as:  
+<p align="center">
+<img width="400" alt="Screenshot 2023-04-04 at 3 54 05 PM" src="https://user-images.githubusercontent.com/97736991/229763491-cd90915c-ec2b-4576-a1a8-e94f43494813.png"></p>
+
+
+* So we will finally use `Gradient Descent` to maximise the `log(likelyhood)`.$l(\theta)$ is a `conave function` so there is `EXACTLY` one maxima.
+<img width="966" alt="Screenshot 2023-04-04 at 4 10 38 PM" src="https://user-images.githubusercontent.com/97736991/229767433-ce2973b3-b909-4e4e-8253-654769df64e0.png">
+* The update rule turns out to be same as the `Linear Regressoin`, only that it least to `ascent` this time.
+<p align="center">
+<img width="1153" alt="Screenshot 2023-04-04 at 4 17 59 PM" src="https://user-images.githubusercontent.com/97736991/229769160-4ce89d9c-1dc2-487e-9455-1703f7cd82c6.png"></p>
+
+
+# Newton's Method (faster method to obtain optimum $\theta$ in logistic regression)
+* It's the same we learnt in MTP290 to find extrema ( extremum of $f(\theta )$ <==> root of $f'( \theta)$ for `concave/ convex` function). The method showed `quadratic convergence` given that multiplicity of root was `1`. 
+* There is some Math when $\theta $ i.e. the `function input` is multidimensional. 
+* The takeaway is that the `time` for iteration grows with the number of parameters. ($H$ is a $(d+1)$ x $(d+1)$ matrix. Each iteration takes atleast $O(d^2)$ time)
+* One iteration of `Newton Raphson` is costlier than one iteration of `Batch Gradient Descent`. If there are just `10-15 features`, it is beneficial to use `Newton Raphson`.
+
+
+<p align="center">
+<img width="995" alt="Screenshot 2023-04-04 at 4 26 03 PM" src="https://user-images.githubusercontent.com/97736991/229770974-c7b812b9-c765-4d83-87ea-a410c5941bdc.png"></p>
+
+
+
+# Perceptron Algorithm 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
