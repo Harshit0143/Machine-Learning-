@@ -363,52 +363,80 @@ Note:
 <img width="707" alt="Screenshot 2023-04-04 at 9 52 37 PM" src="https://user-images.githubusercontent.com/97736991/229855612-2e796495-85ab-48ec-98f7-dab9ec1e9a27.png">></p>
 * Use `Gradient Descent` now   
 
-
-# GDA (Gaussian Discriminant Analysis) 
+## GLA (`Generative Learning Algorithm`)
 * In `Logistic Regression`, we try to make a `linear` `decision boundary` using the training set.
-* In GDA, we consider each `label`, `separately`, make a `model`, then then we have to make prediction on $x$, we see which model it matches to.
+* In GLA, we consider each `label`, `separately`, make a `model`, then then we have to make prediction on $x$, we see which model it matches to.
 * It is simpler and sometimes computationally more efficient. 
 
+### `Discriminative Learning Algorithm` learns (Logistic Regression), We `discriminate` between the different `classes`
+* $P(y|x)$ ; Note that $x$ is a vecțor and $y$ is a scalar. Given `training` values **$x^{(i)}$** we are `learning` $y^{(i)}.  
+* $h_\theta(x) =  0$ or $1$ 
+### Generative Learning Algorithm learns:
+* $P(x|y)$  ; i.e. given the `label`, we are `learning` the `featires` associated with it 
+* $P(y)$ i.e. `Class Prior`
+* So it's statistics. 
+1) The patient walks in
+2) You `test` whether tumour is malignant. This data over many patients gives $P(y)$. 
+3) Now you note down the `features` on the specific patient and map it to malignant or not malignant. This gives $P(x|y)$. 
+ 
+
+
+<img width="1061" alt="Screenshot 2023-04-05 at 10 26 50 AM" src="https://user-images.githubusercontent.com/97736991/229984743-45235c0b-78c3-464c-b76b-51771a468f63.png">
+
+* Then we can use Baye's Rule
+* $P(x|y = 0)$ and P(x|y = 1)$  are learnt in `GLA`
+* $P(y = 0)$ and $P(y = 1)$  are learnt in `GLA`
+* Get $P(x)$ using:
+$$P(x) = P(x|y=1)P(y=1) + P(x|y=0)P(y=0)$$
+* Now get $P(y=1|x)$, using.  
+$$P(y=1|x) = \frac{P(x|y = 1)P(y=1)}{P(x)}$$
+
+
+* Generative Algorithms 
+1) Continuous Features (predicting tumour label)
+2) Discrete Features (predicting spam email)
+
+
+## Gaussian Discriminal Analysis 
+* Suppoes $x\in \Re^d$, we are dropping the $x_0 = 1$. 
+* `Assume` $P(x|y)$ is Gaussian. Note that $x$ is a vector.  
+
+## Multivariate Gaussian 
+<p align="center">
+<img width="835" alt="Screenshot 2023-04-05 at 10 50 15 AM" src="https://user-images.githubusercontent.com/97736991/229987830-fad78d34-418a-47e4-9c62-a0ef8906c9e5.png"> </p>
+
+* $d$: number of features.   
+* µ ∈ $\Re^d$: `mean vector`.  
+* Σ ∈ $\Re^{d&thinsp;Χ&thinsp;d}$ : `Covariance Matrix`. It is `symmetric` 
+
+
+<img width="628" alt="Screenshot 2023-04-05 at 10 57 16 AM" src="https://user-images.githubusercontent.com/97736991/229988800-da492ba4-f151-495e-9555-54e3f2d8990c.png">
+<p align="center">
+$Cov(Z) = E[(Z − E[Z])(Z − E[Z])^T] = E[ZZ^T]−(E[Z])(E[Z])^T$. </p>
+
+
+#### Left to right show `Gaussian Curves` each with `mean = 0 vector` and `covariance matrix` respectively $I$, $2I$, $0.6I$.  
+<p align="center">
+<img width="1035" alt="Screenshot 2023-04-05 at 11 00 18 AM" src="https://user-images.githubusercontent.com/97736991/229989256-00ac9605-80ef-4ba8-86d7-0e45c756bce3.png"></p>
+
+* As Σ becomes `larger`, the `Gaussian` `spreads out`
+* As Σ becomes `smaller`, the `Gaussian` `compresses
 
 
 
+<p align="center">
+
+<img width="650" alt="Screenshot 2023-04-05 at 11 32 56 AM" src="https://user-images.githubusercontent.com/97736991/229994363-c7d22e2f-cfc3-4c41-9bdb-61df3b293d34.png">
+
+<img width="911" alt="Screenshot 2023-04-05 at 11 34 57 AM" src="https://user-images.githubusercontent.com/97736991/229994702-651391f4-7d78-4435-baee-b2b1cd7dd9d6.png">
+</p>
 
 
+# Setting the non-diagonal Elments negative: 
 
+<p align="center">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="992" alt="Screenshot 2023-04-05 at 11 31 29 AM" src="https://user-images.githubusercontent.com/97736991/229994111-83adf09e-7763-4c30-a851-d8f20cbd7add.png"> 
+</p>
 
 
