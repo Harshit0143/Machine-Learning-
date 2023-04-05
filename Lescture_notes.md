@@ -420,7 +420,7 @@ $Cov(Z) = E[(Z − E[Z])(Z − E[Z])^T] = E[ZZ^T]−(E[Z])(E[Z])^T$. </p>
 <img width="1035" alt="Screenshot 2023-04-05 at 11 00 18 AM" src="https://user-images.githubusercontent.com/97736991/229989256-00ac9605-80ef-4ba8-86d7-0e45c756bce3.png"></p>
 
 * As Σ becomes `larger`, the `Gaussian` `spreads out`
-* As Σ becomes `smaller`, the `Gaussian` `compresses
+* As Σ becomes `smaller`, the `Gaussian` `compresses`
 
 
 
@@ -438,5 +438,14 @@ $Cov(Z) = E[(Z − E[Z])(Z − E[Z])^T] = E[ZZ^T]−(E[Z])(E[Z])^T$. </p>
 
 <img width="992" alt="Screenshot 2023-04-05 at 11 31 29 AM" src="https://user-images.githubusercontent.com/97736991/229994111-83adf09e-7763-4c30-a851-d8f20cbd7add.png"> 
 </p>
+
+
+## `Gaussian Discriminal Analysis` (`GDA`) model 
+
+
+
+
+
+
 
 
