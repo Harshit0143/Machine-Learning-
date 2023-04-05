@@ -513,4 +513,40 @@ $$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 
 
 # `Naive Bayes`
+* We have a `binary feature vector` $x \in \\{0,1\\}^d$ where $d$ is the `dictionary` size. 
+* An `email` is converted to corresponding $x$ where $x_j = 1$ `if` $word_j$ is present in the email, `otherwise` $x_j = 0$. 
+* The `feature vector` is called `vocabulary`. 
+### We are building a `Generative Learning Algorithm`. 
+* A very strong assumption (`Conditional Dependence Assumption` or `Naive Bayes Assumption`) is made. 
+* We assume that $x_i’s$ are conditionally independent given y.
+* i.e. given whether the email is `spam` or `not spam`, knowing that a word $word_i$ appears in the email does not affect the probability that another word $word_j$ appears in the email. This is not vey accurate. 
+* This gives us: 
+<p align="center">
+<img width="853" alt="Screenshot 2023-04-05 at 3 20 59 PM" src="https://user-images.githubusercontent.com/97736991/230046225-28968167-9d58-421c-8ed2-b74522832ab9.png"></p>
+
+### Parametes
+* $y \in \\{0,1\\}$ and $y = 1$ <==> email is `spam` ̦
+* $\phi_{j| y = 1 } = P(x_j = 1 | y = 1)$
+* $\phi_{j| y = 0 } = P(x_j = 1 | y = 0)$
+* $\phi_{y} = P(y = 1)$
+
+### Fitting 
+#### Maximise the joint likelihood: 
+<p align="center">
+<img width="519" alt="Screenshot 2023-04-05 at 3 27 49 PM" src="https://user-images.githubusercontent.com/97736991/230047869-01207ada-4f7f-4e58-b6d3-d800e2c84c0d.png"></p>
+
+#### That leads to the `optimal` parameters: 
+<p align="center">
+<img width="546" alt="Screenshot 2023-04-05 at 3 28 45 PM" src="https://user-images.githubusercontent.com/97736991/230048128-23804954-d13d-4434-985e-3ae768085574.png"></p>
+
+* Here $n$ is the number of training examples.  
+* This matches intuition.
+*  Optimal $\phi_{j| y = 0 }$ corresponds to `fraction` of `non-spam` emails that had the word `j`
+*  Optimal $\phi_{j| y = 1 }$ corresponds to `fraction` of `spam` emails that had the word `j`
+
+## How to detect a new spam email?
+<p align="center">
+<img width="1016" alt="Screenshot 2023-04-05 at 3 44 30 PM" src="https://user-images.githubusercontent.com/97736991/230051766-0cb79e88-c049-41a5-bec5-6cefb926dc75.png"></p>
+
+#### `Regression` will perform better than this but this is `computationally` very efficient. 
 
