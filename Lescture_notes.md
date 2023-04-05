@@ -361,6 +361,7 @@ Note:
 
 <p align="center">
 <img width="707" alt="Screenshot 2023-04-04 at 9 52 37 PM" src="https://user-images.githubusercontent.com/97736991/229855612-2e796495-85ab-48ec-98f7-dab9ec1e9a27.png">></p>
+
 * Use `Gradient Descent` now   
 
 ## GLA (`Generative Learning Algorithm`)
@@ -469,4 +470,24 @@ $$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 * The straight line is the `Decision Boundary` Drawn by logistic Regression
 ### It's actually pretty cool to see how `Logistic Regression` and `GDA` will report probabilites.
 * In `Logostic Regression` we have a decision boundary. All lines `parallel` to it are contours. The `uncertaininty` is the maximum at the `Decision Boundary` and it reduced as the `Sigmoid Function` as you move away, `normal` to the `Decision Boundary`.   
-* In `GDA`, the probability of identifying as a $class_0$ is maximum at the `peak` if the `Gaussian` of $class_0$ shown in the figure and decaus out as the `Gaussian` on moving away from the peak. The `peak` is supposed to be somewhat at the `average` of the cluster. (Not sure if the gaussion gives the probability)
+* In `GDA`, the probability of identifying as a $class_0$ is maximum at the `peak` if the `Gaussian` of $class_0$ shown in the figure and decaus out as the `Gaussian` on moving away from the peak. The `peak` is supposed to be somewhat at the `average` of the cluster.
+* The gaussian gives the `probaility` of it being that $x$ fot the given `class`. 
+* So we can't compare the same $x$ from 2 different `Gaussians` directly. But if we multiply each `Gaussian K`  by $frac{P(y = k)}{P(x)}$ then we can compare the `Gaussians`. Note that they will still remain `Gaussians`, just `not normalised`
+
+
+
+
+* The `predicted` `class` is given by: 
+ $$\underset{y}{arg max } P(y|x) = \underset{y}{\arg max}  \frac{P(x|y)P(y)}{P(x)}$$
+* `Note` that the $P(x)$ in `RHS` Denominator is constant for every $y$ so you can skip it to save `computation cost`. 
+* So basically, for each `class` you find which `contour` yout $x$ lies on, get $P(x|y)$, then calculate the `probability` $x$ belongs to that class using `Baye's Rule`. Then you give the class which has the `maximum probability` as your `prediction`.  
+
+#### These are the `decision boundaries` drawn by the 2 algorithms:  
+<p align="center">
+<img width="853" alt="Screenshot 2023-04-05 at 1 38 20 PM" src="https://user-images.githubusercontent.com/97736991/230020724-026d49cf-e7a8-48af-9a4f-d3754963cd77.png"></p>
+
+* Using the `same covariance matrix` for both the `classes` ends up with `less` parameters to deal with and a `linear` decision boundary. 
+### Comparison to `Logistic Regression`
+
+
+
