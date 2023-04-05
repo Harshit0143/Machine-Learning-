@@ -548,5 +548,8 @@ $$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 <p align="center">
 <img width="1016" alt="Screenshot 2023-04-05 at 3 44 30 PM" src="https://user-images.githubusercontent.com/97736991/230051766-0cb79e88-c049-41a5-bec5-6cefb926dc75.png"></p>
 
-#### `Regression` will perform better than this but this is `computationally` very efficient. 
+#### `Regression` will perform better than this but this is `computationally` very efficient.
+
+### `Laplace Smoothing`
+* There are some issues with the `Naive Bayes algorithm`
 
