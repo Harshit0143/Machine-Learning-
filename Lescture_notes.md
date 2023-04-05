@@ -441,11 +441,32 @@ $Cov(Z) = E[(Z − E[Z])(Z − E[Z])^T] = E[ZZ^T]−(E[Z])(E[Z])^T$. </p>
 
 
 ## `Gaussian Discriminal Analysis` (`GDA`) model 
+#### The `GDA` model iș $P(x|y)$ is modellled as a `multivariate` Normal Distribution. Note that the `mean` for $P(x|y=0)$ and $P(x|y=1)$ are different but the `covariance matrix` for both is the `same`
+
+<p align="center">
+<img width="820" alt="Screenshot 2023-04-05 at 11 59 05 AM" src="https://user-images.githubusercontent.com/97736991/229998869-bbc70d86-3972-4d8f-9c75-61be8b438724.png"></p>
+
+## Now our aim is to fit $\mu_1$, $\mu_2$, $Σ$ and $\phi$ into a the `training set`. 
+## Fitting here, is defined as `maximising` the `Joint Likelyhood`. We will maximise the `log likelihood` (the `log` of `Joint Likelyhood`)
+<p align="center">
+<img width="600" alt="Screenshot 2023-04-05 at 12 14 59 PM" src="https://user-images.githubusercontent.com/97736991/230001901-f026b435-0a22-41aa-8eab-fa9f6d104d0e.png"></p>
+
+#### On doing the `math` we find the `optimal` parameters to be. Here $1\\{\\}$ is the `indicator function`.  
+
+<p align="center">
+<img width="597" alt="Screenshot 2023-04-05 at 12 16 03 PM" src="https://user-images.githubusercontent.com/97736991/230002128-3ba99f77-ae4e-488d-b2bb-b74faeee8b88.png"></p>
+
+Note the difference. In `Logistic Regreession` we were trying to `maximise` the `Conditional Likelihood`: 
+$$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 
 
+<p align="center"><img width="646" alt="Screenshot 2023-04-05 at 12 37 44 PM" src="https://user-images.githubusercontent.com/97736991/230006464-6685315b-4cde-4322-be82-11acba8baa70.png">
+</p>
 
-
-
-
-
-
+* The `GDA` tries to fit `2 Gaussians` over the training set. i.e. the `x` with same `predicted probability` lie on the same `contour`. (Note that the `prediction` is different from the $y^{(i)}$ given in the `traiining set` which is either `0` or `1`.
+* The `rule` for fitting, we already discussed, masimising the `log likelihood`. 
+* Note that the `covariance matrix` for both are same. So the `2` curves are `identical` in `shape` and `orientation` (The `decay rate` at same distance from `respective centres`) 
+* The straight line is the `Decision Boundary` Drawn by logistic Regression
+### It's actually pretty cool to see how `Logistic Regression` and `GDA` will report probabilites.
+* In `Logostic Regression` we have a decision boundary. All lines `parallel` to it are contours. The `uncertaininty` is the maximum at the `Decision Boundary` and it reduced as the `Sigmoid Function` as you move away, `normal` to the `Decision Boundary`.   
+* In `GDA`, the probability of identifying as a $class_0$ is maximum at the `peak` if the `Gaussian` of $class_0$ shown in the figure and decaus out as the `Gaussian` on moving away from the peak. The `peak` is supposed to be somewhat at the `average` of the cluster. (Not sure if the gaussion gives the probability)
