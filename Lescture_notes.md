@@ -487,7 +487,30 @@ $$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 <img width="853" alt="Screenshot 2023-04-05 at 1 38 20 PM" src="https://user-images.githubusercontent.com/97736991/230020724-026d49cf-e7a8-48af-9a4f-d3754963cd77.png"></p>
 
 * Using the `same covariance matrix` for both the `classes` ends up with `less` parameters to deal with and a `linear` decision boundary. 
-### Comparison to `Logistic Regression`
+
+## Comparison of `GDA` to `Logistic Regression`
+* Set fixed $\mu_0, \mu_1, \Sigma, \phi$
+* Assume $x$ is `1 dimensional` i.e. there is just 1 feature   
+* We plot $P(y = 0|x)$ and $P(y = 1|x)$   {It's value from the previous expressoins we saw} vs $x$
+* Take $P(y=0) = P(y=1) = 0.5$
+* Then plot $max(\frac{P(y = 0 | x)P(y)=0}{P(x)},\frac{P(y = 1|x)P(y=1)}{P(x)})$  note which graph it 
+* We find that the curve is `Exactly` the `sigmoid function`. 
+* Varying the parammeters $\mu_0, \mu_1, \Sigma, \phi$ is effectively varying $\theta^T$ in `Logistic Regression`. 
+<p align="center">
+<img width="754" alt="Screenshot 2023-04-05 at 2 38 14 PM" src="https://user-images.githubusercontent.com/97736991/230035657-6630f1fd-e813-406d-bcbf-f6e026df4f0f.png"></p>
+
+* If we make stringer `modelling assumptions` and the `assumptions` are reasonably `co  rrect`, the model will berform much better.
+* The `GDA` makes a `Stronger set of Assumptions` and `Logistic Regrssion` makes a `weaker set of assumptions` {You cam prove `if` (stronger) `then` (weaker)}
+* Any memeber from the `exponential family` follows this. 
+* If we don't know whether our `data` is `Gaussian` or `Poisson`, using `Logistic Regression` will do fine (as it needs no assumptions)
+* However, if we know our `data` is `Poisson` and we `feed` it into the `Algorithm`, (we are giving in `more` information), our `Algorithm` will do better.  
+* `Weaker` assumptions means `Algorithm` is more `Robust` to modelling assumptions (performance less affected by what distribtion data folllows)
+* `Algorithm` has `2` sources of knowledge:
+     1) The data 
+     2) The information (type of distribution) data follows, given by you
+* In Practice: `Plot` the data (if it's large enough) and see which `statistical model` it follows. Then decide what you wish to use
+* The skill in ML when you can male prediction with smaller data (100 traininig examples and not a million training examples). 
 
 
+# `Naive Bayes`
 
