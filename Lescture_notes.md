@@ -551,8 +551,70 @@ $$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 #### `Regression` will perform better than this but this is `computationally` very efficient.
 
 ### `Laplace Smoothing`
-* There are some issues with the `Naive Bayes algorithm`
 * `Naive Bayes` is computationally cheap and easy to implement compared to `regression` 
+* There are some issues with the `Naive Bayes algorithm`
+#### Suppose 
+* There is a word `neurips` at the `35000th` position in the dictionary.
+* It did not ever appear in your training set of spam/non-spam emails.
+* The optimal Parameters corresponding to it are: 
+
+<p align="center">
+<img width="400" alt="Screenshot 2023-04-06 at 10 41 10 AM" src="https://user-images.githubusercontent.com/97736991/230277489-155ab9e7-b5f8-414b-9d98-3903a16bb9a6.png"></p>
+
+* Note that $\phi_y$ remains the same.  
+* Now it appears in an email (so it wa present inthe `dictionary` we never encountered in an `email`)
+* We predict it's probability of it being `span` as: 
+<p align="center">
+<img width="400" alt="Screenshot 2023-04-06 at 10 44 05 AM" src="https://user-images.githubusercontent.com/97736991/230277889-5d8d4a55-5586-420c-a155-9723677b48cf.png"></p>
+
+* Which is absurd. The reason is that since `neurips` was not in the training set, `Naive Bias` predicts it being `spam` as `0` and `not spam` as 0. 
+* It is not correct to assign a likelihood `0` to something that you haven't `yet` ever encountered 
+#### The remedy: 
+
+* Take the problem of estimating the mean of a multinomial random variable $z$ taking values in $\\{1, . . . , k\\}$.
+* Note that we were discussing the case of `binary classification` but now we are generalising to `k` possible `discrete` outcomes. 
+* The following procedure is called `Laplace Smoothing`   
+* Use the optimal parametes as: 
+<p align="center">
+<img width="400" alt="Screenshot 2023-04-06 at 10 49 11 AM" src="https://user-images.githubusercontent.com/97736991/230278601-49a333a1-f537-408e-8c5b-0bf3081f6c2e.png"></p>
+
+#### CRUX
+* We basically add `1` to the number of `spams` we saw and `1` to the number of `non spams` we saw   
+* We add a `spam` email to our training set that has `every` word in the dictionary.
+* We add a `non spam` email to our training set that has `every` word in the dictionary. 
+
+Note that: 
+<p align="center">
+<img width="200" alt="Screenshot 2023-04-06 at 10 50 06 AM" src="https://user-images.githubusercontent.com/97736991/230278720-a801ea1f-4345-4c7c-84bb-909feb74f834.png"></p>
+
+still holds.
+* This results in $\phi_j \neq 0$ for every $j$. Which solves our probem.
+* The `Naive Bayes` changes to:  
+
+<p align="center">
+<img width="488" alt="Screenshot 2023-04-06 at 10 55 20 AM" src="https://user-images.githubusercontent.com/97736991/230279551-3b10eac0-4788-43e7-82aa-0ff772f2171b.png"></p>
+
+* $\phi_y$ also changes. Use the formula presented before with $k = 2$
+
+
+
+### Multimonial features 
+* For example, if features are `sizes` of house, we can make it `multinomial` by making `buckets`. Often `10 buckets`.   
+and we can make the prediction using :
+$$P(x|y) = \prod\limits_{1}^{d}P(x_j|y)$$
+where $d$ is the number of features. 
+We just discussed the `Multivariate Bernoulli Even Model`. 
+
+
+
+### In `Naive Bayes` we are just considering the `occurence` and not the `frequency` 
+Now we discuss `Multinomial Even Model`. 
+#### New representaion for $x$
+* $x$ be a vector of all vords in the `email` 
+* $x_j$ is index of the $j^{th}$ wod in the `email` in the `dictionart`. 
+* The length of $x$ now varies with the `traingin example`.  
+
+
 
 ## `Support Vector Machines`
 * We aim to draw `non linear` boundaroes. 
