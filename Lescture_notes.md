@@ -642,33 +642,94 @@ Hence overall probability of a message $\\{x_1, x_2, . . . , x_d\\}$ being gener
 <p align="center">
 <img width="700" alt="Screenshot 2023-04-06 at 11 44 14 AM" src="https://user-images.githubusercontent.com/97736991/230287294-aae05289-8711-4ba3-b529-2940dc4100ae.png"></p>
 
+* `Mortage, m0rtage, mort@ge` use a `dictionary` that maps these words `together`. 
+
 
 
 ## `Support Vector Machines`
-* We aim to draw `non linear` boundaroes. 
+* We aim to draw `non linear` boundaries. 
 * We need to map input featires, match this to a `high dimensional` set of fretures:
-* Then alply linear regressoin on the obtaind featires. 
-* For example if we have features $x_1$ and $x2$, the output can depend on $\sqrt(x_1x_2)$, $x_1^2$, $log(x_2)$.  
+* Then apply linear regressoin on the obtaind featires. 
+* For example if we have features $x_1$ and $x2$, the output can depend on $\sqrt(x_1x_2)$, $x_1^2$, $log(x_2)$.  Example:
+<p align="center">
+<img width="500" alt="Screenshot 2023-04-06 at 12 03 23 PM" src="https://user-images.githubusercontent.com/97736991/230290907-a5bdf7ac-d1e4-41f3-b5db-fcd02b3139a7.png"></p>
+
+
+
 * These are not as effective as `Neural Networks`
 * But the implementation is much easier due to `packages`  
 
 
+
+Notation: 
+* $y ∈ \\{−1,1\\}$ (instead of $\\{0, 1\\}$)
+* Parameters: $\omega, b$ {instead of \theta}. 
+* $\omega$ takes the role of $[θ_1 . . . θ_d]^T$ 
+* $b$ takes the role of $\theta_0$. 
+
+
+<p align="center">
+<img width="300" alt="Screenshot 2023-04-06 at 12 07 07 PM" src="https://user-images.githubusercontent.com/97736991/230291609-3e68295f-d836-4d57-a0db-535538bdb860.png"></p>
+
+
+
+*  $g(z) = 1$ $if$ $z ≥ 0$ and $g(z) = −1$ $otherwise$. 
+*  So we are using the `strong` discrimination like in the `Perceptron Algorithm` 
+
+### `Functional Margin`    $\hat{\gamma}$
+* From good training set we expect: 
+* $y^{(i)}(\omega^T x + b) >>> 0$ i.e. the `training examples` are well differentialted. A `confident` prediction.   
+* Note how the above takes care of both the cases $y^{(i)}=1$ and  $y^{(i)}=-1$ 
+#### `Functional Margin` w.r.t. a training example:
+ <p align="center">
+<img width="700" alt="Screenshot 2023-04-06 at 12 43 09 PM" src="https://user-images.githubusercontent.com/97736991/230302019-42c79bd5-f588-4e16-ab1a-3543f6705eb2.png"></p>
+
+
+
+* Replacing $(\omega, b)$ with $(2\omega, 2b)$ doubles the `functional margin` which is absurd
+* As now we can make the functional margin arbitrarily large without really changing anything meaningful. {The line remains the same}
+* Note that this also depends on our specific choice of $g$.
+
+
+#### `Functional Margin` w.r.t. a training set:
+ <p align="center">
+<img width="1174" alt="Screenshot 2023-04-06 at 12 51 15 PM" src="https://user-images.githubusercontent.com/97736991/230303865-6d278138-32f3-4d2f-bf19-5816328066be.png"></p>
+
+### `Geometric Margin` $\gamma$
+
+#### `Geometrical Magin` w.r.t training example: 
+<img width="400" alt="Screenshot 2023-04-06 at 12 56 33 PM" src="https://user-images.githubusercontent.com/97736991/230305110-3414da09-620f-428c-bf70-df0c9605397b.png">
+
+
+Note that for every $i \in \\{1, 2.....n\\}$:  
+$$\gamma^{(i)} = \frac{\hat{\gamma}^{(i)}}{\lVert \omega \rVert } $$
+
+#### `Geometrical Magin` w.r.t training set: 
+ <p align="center">
+<img width="1000" alt="Screenshot 2023-04-06 at 12 55 22 PM" src="https://user-images.githubusercontent.com/97736991/230304847-7e55e088-2ac4-43c0-adc8-681c0eba2b9f.png">
+    </p>
+
+
+* Notice how in the shown figure, both the `Decision Boundaries` will `classify` the `training set` correctly. 
+ <p align="center">
+<img width="518" alt="Screenshot 2023-04-06 at 1 07 25 PM" src="https://user-images.githubusercontent.com/97736991/230307499-483fb489-b0fd-4c79-9f1e-54b7a55d4710.png">  </p>
+
+
+
 #### `Optimal margin Clasiifier` (Separable case)
-
+* It chooses $(\omega,b)$ that `maximimises` the geometric margin over the `Training set` 
+* This is an optimisation problem, but difficult to sove in the cirrent form:
 <p align="center">
-<img width="250" alt="Screenshot 2023-04-06 at 9 52 27 AM" src="https://user-images.githubusercontent.com/97736991/230271463-5564f747-e87e-4c13-91b0-cc456a15768b.png"></p>
-
-
-
-* First we derive an algorithm for `linear boundary` case. {We'll look at the `Inseparable case` later} 
-
-#### `Functional Margin`
-
-
-
-
-### `Geometric Margin` (Recall Data is `linearly separable`) 
-* We are trying to maximise the `Geometric Margin` 
+<img width="400" alt="Screenshot 2023-04-06 at 1 13 39 PM" src="https://user-images.githubusercontent.com/97736991/230308908-2a20b7dc-09a5-4295-a713-731840cbd7bb.png"> </p>
+* It can be shown equivalent to: 
 <p align="center">
-<img width="1095" alt="Screenshot 2023-04-06 at 10 09 18 AM" src="https://user-images.githubusercontent.com/97736991/230273411-b6ff89fe-077b-46cb-ae44-f5c01f933680.png"></p>
+<img width="400" alt="Screenshot 2023-04-06 at 1 15 43 PM" src="https://user-images.githubusercontent.com/97736991/230309444-a2118f70-4de1-487b-8bfb-02141c646500.png"></p>
+
+* Which is a `convex optimisation` problem
+* In intuition is we are wrying to minimise $\lVert \omega \rVert$ which is the `denominator` in the expression for $\gamma$. 
+
+## The above was subject to the `Separable Assumption`
+
+
+
 
