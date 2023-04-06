@@ -552,4 +552,27 @@ $$L(\theta)= \prod_{1}^{n}P(y^{(i)}| x^{(i)},\theta)$$
 
 ### `Laplace Smoothing`
 * There are some issues with the `Naive Bayes algorithm`
+* `Naive Bayes` is computationally cheap and easy to implement compared to `regression` 
 
+## `Support Vector Machines`
+* We aim to draw `non linear` boundaroes. 
+* We need to mao input featires, match this to a `high dimensional` set of fretures:
+* Then alply linear regressoin on the obtaind featires. 
+* For example if we have features $x_1$ and $x2$, the output can depend on $\sqrt(x_1x_2)$, $x_1^2$, $log(x_2)$.  
+* These are not as effective as `Neural Networks`
+* But the implementation is much easier due to `packages`  
+
+#### `Optimal margin Clasiifier` (Separable case)
+
+<p align="center">
+<img width="250" alt="Screenshot 2023-04-06 at 9 52 27 AM" src="https://user-images.githubusercontent.com/97736991/230271463-5564f747-e87e-4c13-91b0-cc456a15768b.png"></p>
+
+* First we derive an algorithm for `linear boundary` case. {We'll look at the `Inseparable case` later} 
+
+#### `Functional Margin`
+
+
+### `Geometric Margin` (Recall Data is `linearly separable`) 
+* We are trying to maximise the `Geometric Margin` 
+<p align="center">
+<img width="1095" alt="Screenshot 2023-04-06 at 10 09 18 AM" src="https://user-images.githubusercontent.com/97736991/230273411-b6ff89fe-077b-46cb-ae44-f5c01f933680.png"></p>
