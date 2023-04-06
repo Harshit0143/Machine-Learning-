@@ -733,3 +733,7 @@ $$\gamma^{(i)} = \frac{\hat{\gamma}^{(i)}}{\lVert \omega \rVert } $$
 
 
 
+
+
+
+
