@@ -608,33 +608,67 @@ We just discussed the `Multivariate Bernoulli Even Model`.
 
 
 ### In `Naive Bayes` we are just considering the `occurence` and not the `frequency` 
-Now we discuss `Multinomial Even Model`. 
-#### New representaion for $x$
-* $x$ be a vector of all vords in the `email` 
-* $x_j$ is index of the $j^{th}$ wod in the `email` in the `dictionart`. 
-* The length of $x$ now varies with the `traingin example`.  
+# `Multinomial Even Model`. 
+#### Terminologies: 
+* $|V|$: `vocabulary`/ `dictionary` size   
+* $x_j$:  identity of the j-th word in the email.
+* $x_j \in \\{1, . . . , |V|\\}$ 
+* $d$: Length of `email`. 
+* `Email` `<==>` vector $\\{x_1, x_2, . . . , x_d\\}$
+* Note that `d` varies with different `emails` 
+
+#### Assumption on `Generation` of `email`. 
+* `Random` Process 
+* `Spam/non-spam` is first determined as per to $p(y)$
+* $x_1$ is generated from a `multinomial` distribution over words $p(x_1|y)$
+* Next $x_2$ is chosen independently of $x_1$  from `same` `multinomial` distribution,
+* Similarly for $x_3, x_4 .....x_d$ are generated. 
+Hence overall probability of a message $\\{x_1, x_2, . . . , x_d\\}$ being generated: 
+
+
+<p align="center">
+<img width="400" alt="Screenshot 2023-04-06 at 11 39 40 AM" src="https://user-images.githubusercontent.com/97736991/230286535-9b0068be-4a13-4a18-9f08-db58d4c98b27.png"></p>
+
+* Notice that $x_j|y$ is now `Multinomial` rather than a `Bernoulli` in previous method. 
+* This allows us to give `weightage` to frequency of a `spammy` word in the `email`.  
+
+<p align="center">
+<img width="1000" alt="Screenshot 2023-04-06 at 11 42 44 AM" src="https://user-images.githubusercontent.com/97736991/230287051-db611f3a-3859-4254-81fe-fa71a4be0694.png"></p>
+<p align="center">
+<img width="1000" alt="Screenshot 2023-04-06 at 11 43 35 AM" src="https://user-images.githubusercontent.com/97736991/230287203-d8039a2d-676c-4149-8731-13993dc2e45b.png"></p>
+
+
+#### Applying `Laplace Smoothing` 
+<p align="center">
+<img width="700" alt="Screenshot 2023-04-06 at 11 44 14 AM" src="https://user-images.githubusercontent.com/97736991/230287294-aae05289-8711-4ba3-b529-2940dc4100ae.png"></p>
 
 
 
 ## `Support Vector Machines`
 * We aim to draw `non linear` boundaroes. 
-* We need to mao input featires, match this to a `high dimensional` set of fretures:
+* We need to map input featires, match this to a `high dimensional` set of fretures:
 * Then alply linear regressoin on the obtaind featires. 
 * For example if we have features $x_1$ and $x2$, the output can depend on $\sqrt(x_1x_2)$, $x_1^2$, $log(x_2)$.  
 * These are not as effective as `Neural Networks`
 * But the implementation is much easier due to `packages`  
+
 
 #### `Optimal margin Clasiifier` (Separable case)
 
 <p align="center">
 <img width="250" alt="Screenshot 2023-04-06 at 9 52 27 AM" src="https://user-images.githubusercontent.com/97736991/230271463-5564f747-e87e-4c13-91b0-cc456a15768b.png"></p>
 
+
+
 * First we derive an algorithm for `linear boundary` case. {We'll look at the `Inseparable case` later} 
 
 #### `Functional Margin`
+
+
 
 
 ### `Geometric Margin` (Recall Data is `linearly separable`) 
 * We are trying to maximise the `Geometric Margin` 
 <p align="center">
 <img width="1095" alt="Screenshot 2023-04-06 at 10 09 18 AM" src="https://user-images.githubusercontent.com/97736991/230273411-b6ff89fe-077b-46cb-ae44-f5c01f933680.png"></p>
+
