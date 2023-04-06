@@ -732,7 +732,8 @@ $$\gamma^{(i)} = \frac{\hat{\gamma}^{(i)}}{\lVert \omega \rVert } $$
 
 
 
-
+# Kernels   
+4
 
 
 
