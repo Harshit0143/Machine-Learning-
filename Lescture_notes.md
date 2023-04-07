@@ -935,8 +935,9 @@ There is some `true` value of $\theta$ which we want to estimate. We assume the 
 * $\lambda$ in regression
 * $\tau$ in `locally weighted regression`
 * $C$ in `SVM` 
-
+## Simple Hold out `Cross Validation`
 #### Partition  $S$ into $S_{train}$ , $S_{dev}$ , $S_{test}$. 
+ * $S_{dev}$ is also called `cross validation set` 
 
 * `Train` each possible `degree` of polyniomial on $S_{train}$ to obtain `hypothesis` $h_i$
 * Measure the `error` on $S_{dev}$ {between the `predicted value` and the `actual value` we have}
@@ -945,3 +946,31 @@ There is some `true` value of $\theta$ which we want to estimate. We assume the 
  
 - Finally to `present` a `non-biased` result, present the `error` on the $S_{test}$, something you didn't look at during development. As you model is already optimised on $S_{dev}$. 
 
+* Evaluating `algorithms` multiple time on the  $S_{test}$ is ok but we `can't` make any `decision` based on the result    
+
+#### Choose $S_{dev}$ and $S_{test}$ big enough to be able to see a difference in performance of different Algorithmn 
+
+#### Sometimes we have just `100` examples
+* If we take  $S_{train}=70$ , $S_{dev}=30$, we are wasting a lot of data in  $S_{dev}$ for finding the `degree` of polynomial 
+
+## `k-fold Cross Validation`
+#### Sometimes we have just `100` examples
+* Used only when `dataset` is small.
+* divide the `data` into `k` partitions
+* `k` is typically 10
+* Hold out one of `1, 2....k` of the partition for `testing` and  `train` on remaining   
+```
+    for i = 1, 2.....k
+        train on (k-1) pieces 
+        test on remaining 1 piece
+    Average the square errors for all (k) iterations 
+```
+* do the above procedure for each `degree (d)` and select the one with `least average error` 
+* Optional: `Refit` the data on the `entire data` for the `chosen degree`. 
+* So basially we are leaving just $\frac{1}{k}$ th of the `data` 
+* The `Computation` now is expensive ̦
+
+## `Leave-one-out Cross Validation` 
+* As the name suggests, here `k` = `number of training examples` 
+* Typically `m < 100` around `20-50` 
+* `Computationally` very expensive. 
