@@ -855,7 +855,17 @@ How to predict:
  <p align="center">
 <img width="600" alt="Screenshot 2023-04-07 at 11 38 33 AM" src="https://user-images.githubusercontent.com/97736991/230551810-7f6581c7-18f7-4855-8757-dc62564e2890.png"></p>
 
-- Above is called $l_1$ regularisation. 
-- 
+- Above is called $l_1$ *regularisation*. 
+ <p align="center">
+<img width="600" alt="Screenshot 2023-04-07 at 11 42 01 AM" src="https://user-images.githubusercontent.com/97736991/230552264-fb148869-771c-4c98-b08b-278cf220062c.png"></p>
 
+### The `dual` is:
 
+ <p align="center">
+<img width="600" alt="Screenshot 2023-04-07 at 11 42 28 AM" src="https://user-images.githubusercontent.com/97736991/230552318-08df9896-163a-4cfe-882d-63dfbddf7758.png"></p>
+
+* The `Basic Optimal Margin Classifier`, maximises the `Geometric Margin` for the `worst example`. This leads to this dramatic swing in the `decision boundary` due to just one `outlier`. 
+* We can say that if it is not `possible` to `linearly separate` the data, the optimisation problem would be `infeasible`  
+ 
+ <p align="center">
+<img width="481" alt="Screenshot 2023-04-07 at 11 45 50 AM" src="https://user-images.githubusercontent.com/97736991/230552715-7c5061c2-be42-4ce7-8f21-b1fd24eeca0e.png"></p>
