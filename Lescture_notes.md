@@ -869,3 +869,8 @@ How to predict:
  
  <p align="center">
 <img width="481" alt="Screenshot 2023-04-07 at 11 45 50 AM" src="https://user-images.githubusercontent.com/97736991/230552715-7c5061c2-be42-4ce7-8f21-b1fd24eeca0e.png"></p>
+
+
+### Protein Sequence Qualifier (with 26 Amino Acids)
+<img width="861" alt="Screenshot 2023-04-07 at 12 13 55 PM" src="https://user-images.githubusercontent.com/97736991/230556366-faa3a353-51f9-428d-b9a2-1bc4d475f552.png">
+* This was about defining features innovatively
