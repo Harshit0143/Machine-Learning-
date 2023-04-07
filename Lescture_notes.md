@@ -774,7 +774,12 @@ How to predict:
 * We use the `linearity in first slot` of the `inner product` to `unpack` the values so that we can apply the `kernel` trick
 
  
-# Kernels   
+# Kernels 
+#### Steps: 
+* Write an `algorithm` in terms of $\langle x^{(i)},x^{(j)}\rangle$ (or  $\langle x,z\rangle$) 
+* Let there be a mappting $x \to \phi(x)$ {Lower `dimension` to much higher `dimension` for our purpose}
+* Find a way to compute $K(x,z) = \phi(x)^T\phi(z)$
+* Replace  $\langle x,z\rangle$ in `algorithm` by $K(x,z)$
 
 
 
