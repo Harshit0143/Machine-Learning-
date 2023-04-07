@@ -14,3 +14,17 @@
 * The `Learning Algorithm` is a `Deterministic Function` 
 * Hemce, $\hat{h}$ is a `Random Variable` 
 * There exists `true` parameters $\theta^{\*}$ and $h^{\*}$ {Not `random`. It's a `constant`}
+* $\(^{\*}\)$ denotes a `true` quantity 
+* $\hat{x}$ denotes a `prediction` of $x$
+
+## `Data View` 
+ <p align="center">
+<img width="652" alt="Screenshot 2023-04-07 at 5 49 46 PM" src="https://user-images.githubusercontent.com/97736991/230607766-36b16c71-10a9-442e-8554-bbac423e83a7.png"></p>
+
+## `Parammeter View`
+* The distribution $D$ keeps producing a `Training Set` of size $m$
+* Each time we run our `4` algorithmns and get the value of $\theta$
+* We plot it. here `feature vector`, hence $\theta$ is taken as a `2-dimensioanl`
+* `star` corresponds to the `true value` {only `god` knows it}
+ <p align="center">
+<img width="800" alt="Screenshot 2023-04-07 at 5 53 25 PM" src="https://user-images.githubusercontent.com/97736991/230608213-56cd90d0-915f-4ba7-8d73-87185509c3d5.png"></p>
