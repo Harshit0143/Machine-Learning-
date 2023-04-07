@@ -926,5 +926,9 @@ $$\underset{\theta}{argmax} P(S|\theta)$$
 $$\underset{\theta}{argmax} P(\theta|S)$$ 
 There is some `true` value of $\theta$ which we want to estimate. We assume the data follows `Gaussian Prior` distribution even before we have seen it. 
 
+ <p align="center">
+<img width="560" alt="Screenshot 2023-04-07 at 3 46 41 PM" src="https://user-images.githubusercontent.com/97736991/230591748-92bf3b1c-0940-489d-a7d5-c0a8867859b2.png"></p>
 
+
+## Finding the `optimal` $\lambda$ for `regularisation`. 
 
