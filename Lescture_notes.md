@@ -831,3 +831,12 @@ How to predict:
  <p align="center">
 <img width="700" alt="Screenshot 2023-04-07 at 11 15 04 AM" src="https://user-images.githubusercontent.com/97736991/230548907-898143ac-510c-43d2-9404-1878fb08b457.png"></p>
 
+### The `linear kernel`
+- $\langle x,z\rangle = x^Tz$
+### The `Gaussian Kernel`
+ <p align="center">
+<img width="300" alt="Screenshot 2023-04-07 at 11 22 01 AM" src="https://user-images.githubusercontent.com/97736991/230549811-ac0e3d16-872c-43a7-9556-3b103559eed5.png"></p>
+* It corresponds to an `infinte dimensional` `feature space` and consists of `ALL monomial features` 
+
+
+
