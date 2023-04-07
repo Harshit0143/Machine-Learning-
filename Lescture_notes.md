@@ -935,7 +935,7 @@ There is some `true` value of $\theta$ which we want to estimate. We assume the 
 * $\lambda$ in regression
 * $\tau$ in `locally weighted regression`
 * $C$ in `SVM` 
-## Simple Hold out `Cross Validation`
+## `Simple Hold out Cross Validation`
 #### Partition  $S$ into $S_{train}$ , $S_{dev}$ , $S_{test}$. 
  * $S_{dev}$ is also called `cross validation set` 
 
@@ -974,3 +974,19 @@ There is some `true` value of $\theta$ which we want to estimate. We assume the 
 * As the name suggests, here `k` = `number of training examples` 
 * Typically `m < 100` around `20-50` 
 * `Computationally` very expensive. 
+
+
+# `Feature Selection` 
+* This helps to reduce `overfitting`. 
+* Trying to find a `smaller` subset of features that is `more relevant`. 
+* There can be `100's` of variables but only a `few` that affect the result. 
+* Algorithm: 
+```
+    Start with 
+        F = {}
+        h(x) = b
+    Repeat
+        1) Try adding each feature (i) to F and see which single feature addition gives maximum improvement in S_dev performance
+        2) Add that feature to F
+    Stop when you see `adding any feature` does not lead to any significant increment in Performance
+```
