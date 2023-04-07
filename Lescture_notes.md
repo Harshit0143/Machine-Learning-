@@ -731,8 +731,12 @@ $$\gamma^{(i)} = \frac{\hat{\gamma}^{(i)}}{\lVert \omega \rVert } $$
 ## The above was subject to the `Separable Assumption`
 
 1) It can be `proved` that the `optimal` $\omega$ can be written as a `liner combination` of `training examples`. 
-$$\omega^{\*} = \sum\limits_{1}^{m} \alpha_ix^{(i)}$$
-* Here `m` is the number of training examples. 
+$$\omega^{\*} = \sum\limits_{1}^{n} \alpha_ix^{(i)}$$
+* Here `n` is the number of training examples. 
+* Since $y^{(i)}$'s are constants, it is equivalently:
+<p align="center">
+ <img width="351" alt="Screenshot 2023-04-07 at 10 36 21 AM" src="https://user-images.githubusercontent.com/97736991/230544702-20599654-5fa8-432a-9bb8-3d122d608b0e.png"></p> 
+
 * THe proof used `induction` on the `iterations` in the `Gradient Descent Algorithm`. Notice that in each `iteration` of the `Gradient Descent`, we 
 add a `linear combination` of $x^{(i)}$'s to `\theta`. 
 
@@ -757,10 +761,19 @@ add a `linear combination` of $x^{(i)}$'s to `\theta`.
 
 How to predict: 
 * Solve for $\alpha_i$'s (store it). THere are `software packages` that can do that 
-* Given the `optimal` $\omega$, $\omega^{\*}$, the `optimal` $b$,$%b^{\*}$ can be obtained as:  
+* Given the `optimal` $\omega$, $\omega^{\*}$, the `optimal` $b$, $b^{\*}$ can be obtained as:  
 <p align="center">
-<img width="748" alt="Screenshot 2023-04-07 at 10 30 43 AM" src="https://user-images.githubusercontent.com/97736991/230544142-3ed48eb8-ad63-44c2-a355-0e5c3445f758.png"></p>
+<img width="400" alt="Screenshot 2023-04-07 at 10 30 43 AM" src="https://user-images.githubusercontent.com/97736991/230544142-3ed48eb8-ad63-44c2-a355-0e5c3445f758.png"></p>
 
+
+* To make a prediction for $x$, we have: 
+* $h_{\omega,b}=$ 
+ <p align="center">
+<img width="400" alt="Screenshot 2023-04-07 at 10 39 24 AM" src="https://user-images.githubusercontent.com/97736991/230545006-3a9f1a2b-f8a5-4d6c-abf4-dbac1637055b.png"></p>
+* Where `n` is the number of `training examples`
+* We use the `linearity in first slot` of the `inner product` to `unpack` the values so that we can apply the `kernel` trick
+
+ 
 # Kernels   
 
 
