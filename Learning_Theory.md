@@ -118,5 +118,21 @@ or equivalently
 * So we we are trying to minimise the `training error`. It is different from the `Maximum Likelihood` we do in `Logistic Regression`
 * It can be shown that it can handle losses like `Logistic Losses`
 
+### Now we limit ourselves to `ERM's` 
+# Uniform Convergence
+1) $\hat{\epsilon}(h)$ vs ${\epsilon}(h)$
+2) ${\epsilon}(\hat{h})$ vs ${\epsilon}(h)$
+
+# Tools 
+1) `Union Bound`
+<p align="center">
+ <img width="600" alt="Screenshot 2023-04-07 at 9 32 51 PM" src="https://user-images.githubusercontent.com/97736991/230640064-faf3bdec-c732-414e-bd03-ae4e60989cdb.png"></p>
+ 
+ 2) `Hoeffding Inequality` 
+<p align="center">
+<img width="943" alt="Screenshot 2023-04-07 at 9 34 24 PM" src="https://user-images.githubusercontent.com/97736991/230640331-eef7837f-1f63-47ec-acea-75f7cd66e8cf.png"></p>
+
+<p align="center">
+<img width="783" alt="Screenshot 2023-04-07 at 9 39 59 PM" src="https://user-images.githubusercontent.com/97736991/230641146-2d619195-0936-4a06-987c-a8ad289f3fe1.png"></p>
 
 
