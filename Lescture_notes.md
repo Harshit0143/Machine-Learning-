@@ -883,3 +883,19 @@ How to predict:
 * `Overfitting` (High `Variance`): Algorithm fits `extremely well` on the `training set` but will do poorly on `prediction`. 
 
 
+# Regularisation 
+
+ <p align="center">
+<img width="1595" alt="Screenshot 2023-04-07 at 1 47 14 PM" src="https://user-images.githubusercontent.com/97736991/230571156-a3157d81-42e2-42d2-9793-48cf31ad8536.png"></p>
+ <p align="center">
+<img width="1598" alt="Screenshot 2023-04-07 at 1 50 03 PM" src="https://user-images.githubusercontent.com/97736991/230571636-60944ca2-8b99-4b54-8438-52f525d8333e.png"></p>
+ <p align="center">
+<img width="1409" alt="Screenshot 2023-04-07 at 1 52 17 PM" src="https://user-images.githubusercontent.com/97736991/230572056-98f42500-79b0-4d43-ade3-0913c830b91d.png"></p>
+
+* Since we normalise the regularisation term by  diving by $2m$, so it is likely that the value of “lambda” we have now, might work when we add new examples to out data set. Regularisation of the parameter ‘b’ ( that is, penalising it for being too large) hoes not have a significant effect. 
+
+
+* Increasing $\lambda \to$  decreasing $ \lVert \omega \rVert $
+* $\lambda \to \infty$  would give us the constant $h_{\omega,b}(x) = b$ curve that is underfitting
+* $\lambda \to 0$ will give us overfitting
+
