@@ -930,5 +930,18 @@ There is some `true` value of $\theta$ which we want to estimate. We assume the 
 <img width="560" alt="Screenshot 2023-04-07 at 3 46 41 PM" src="https://user-images.githubusercontent.com/97736991/230591748-92bf3b1c-0940-489d-a7d5-c0a8867859b2.png"></p>
 
 
-## Finding the `optimal` $\lambda$ for `regularisation`. 
+## Finding the `optimal` parameters for `regularisation`. 
+* Degree of `polynomial` for fitting. 
+* $\lambda$ in regression
+* $\tau$ in `locally weighted regression`
+* $C$ in `SVM` 
+
+#### Partition  $S$ into $S_{train}$ , $S_{dev}$ , $S_{test}$. 
+
+* `Train` each possible `degree` of polyniomial on $S_{train}$ to obtain `hypothesis` $h_i$
+* Measure the `error` on $S_{dev}$ {between the `predicted value` and the `actual value` we have}
+* Obviously don't do that `error analysis` on $S_{train}$ or you'll overfit. 
+* Choose the `model` that gives `least square sum of errors`. 
+ 
+- Finally to `present` a `non-biased` result, present the `error` on the $S_{test}$, something you didn't look at during development. As you model is already optimised on $S_{dev}$. 
 
