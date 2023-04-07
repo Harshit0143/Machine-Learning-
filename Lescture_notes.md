@@ -782,9 +782,18 @@ How to predict:
 * Replace  $\langle x,z\rangle$ in `algorithm` by $K(x,z)$
 
 
-#### The `Crux` that saves computation is that, $\phi(x)$ is very high `dimensional` so computing $\phi(x)$ is expensive. But we actually just need the `relative` comparison between $\phi(x)$ and $\phi(z)$, as f $\langle \phi(x),\phi(z) \rangle$. Which we will `compute` very `fast` 
+#### The `Crux` that saves computation is that, $\phi(x)$ is very high `dimensional` so computing $\phi(x)$ is expensive. But we actually just need the `relative` comparison between $\phi(x)$ and $\phi(z)$, as $\langle \phi(x),\phi(z) \rangle$. Which we will `compute` very `fast` 
 
+### Example 1
+* For the `3D example, we have` $x \to \phi(x)$ as: 
+ <p align="center">
+<img width="134" alt="Screenshot 2023-04-07 at 10 52 10 AM" src="https://user-images.githubusercontent.com/97736991/230546338-1e27e7c4-293d-4c1f-a6b4-7b08d41f9897.png"></p>
 
+* Notice that `if` $x \in \Re^d$ `then` $\phi(x) \in \Re^{d^2}$. 
+* Naively computing $\phi(x)$ and  $\phi(z)$ will take $\mathcal{O}(n^2)$ time then futher  $\mathcal{O}(n^2)$ `computations` to get $\phi(x)^T\phi(z)$
+* We can show the following which now helps us `compute`  $\langle \phi(x),\phi(z)\rangle$) in  $\mathcal{O}(n)$ time. 
+ <p align="center">
+<img width="223" alt="Screenshot 2023-04-07 at 10 59 41 AM" src="https://user-images.githubusercontent.com/97736991/230547177-7ea2e3d5-c304-40cd-baa2-fac1d919a3a7.png"></p>
 
 
 
