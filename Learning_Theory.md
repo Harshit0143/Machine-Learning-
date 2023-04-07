@@ -133,6 +133,28 @@ or equivalently
 <img width="943" alt="Screenshot 2023-04-07 at 9 34 24 PM" src="https://user-images.githubusercontent.com/97736991/230640331-eef7837f-1f63-47ec-acea-75f7cd66e8cf.png"></p>
 
 <p align="center">
-<img width="783" alt="Screenshot 2023-04-07 at 9 39 59 PM" src="https://user-images.githubusercontent.com/97736991/230641146-2d619195-0936-4a06-987c-a8ad289f3fe1.png"></p>
+
+
+<img width="1060" alt="Screenshot 2023-04-07 at 9 56 19 PM" src="https://user-images.githubusercontent.com/97736991/230643508-456e0f15-0721-49a8-9e04-c44ccfae83b4.png">
+</p>
+<p align="center">
+<img width="600" alt="Screenshot 2023-04-07 at 9 52 10 PM" src="https://user-images.githubusercontent.com/97736991/230642932-2b81848b-dc98-40ec-b3f1-749a06b18c4b.png"></p>
+
+
+* `fact`:
+$$E\[\hat{\epsilon}(h_i) \] = E\[h_i\]$$
+* Here $E\[.\]$ is w.r.t. every possible `training set` $S$ from $D$. The `fact` is pretty intuitive. 
+
+# Finite $H$ , $|H| = k$ 
+* Using some math (Pg 118, 8.3.2), we obtain the `Sample Complexity Result` 
+<p align="center">
+<img width="1343" alt="Screenshot 2023-04-07 at 9 53 45 PM" src="https://user-images.githubusercontent.com/97736991/230643183-345a02bc-e01b-481c-b4b7-8dde8680b797.png"></p>
+* Further answer to (2)
+ <p align="center">
+<img width="1315" alt="Screenshot 2023-04-07 at 10 01 11 PM" src="https://user-images.githubusercontent.com/97736991/230644113-1a5cb487-2ab3-4103-935c-cfe6100659d8.png"></p>
+
+<img width="696" alt="Screenshot 2023-04-07 at 10 04 21 PM" src="https://user-images.githubusercontent.com/97736991/230644501-0a425977-f787-48c0-9d8b-591753b094b7.png">
+#### This was `Lecture 9`
+
 
 
