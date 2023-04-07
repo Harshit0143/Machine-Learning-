@@ -53,6 +53,12 @@
 * So we might be increasing `bias` in the process of reducing `variance` 
 
 
+#### We have our `Space` ig `hypothesis` 
+ <p align="center">
+<img width="400" alt="Screenshot 2023-04-07 at 8 27 53 PM" src="https://user-images.githubusercontent.com/97736991/230630205-caaa90ad-725a-4fa3-9fc8-f86f2d5f9722.png">
+</p>
 
-* $g$ is the `best posible hypothesis`
-* 
+* $H$ is the `class` of `hypothesis`. Like the set of all `Logistic Regression hypothesis` 
+* $g$ is the `best posible hypothesis` (the `least` error). It need nOt lie in $H$
+* $h^{\*}$ is the `best` `hypothesis` in $H$
+* $\hat{h}$ is any `hypothesis` in $H$ trained from a `fininte` sized `training set`   
