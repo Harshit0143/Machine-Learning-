@@ -899,3 +899,15 @@ How to predict:
 * $\lambda \to \infty$  would give us the constant $h_{\omega,b}(x) = b$ curve that is underfitting
 * $\lambda \to 0$ will give us overfitting
 
+#### Why does `SVM` not overfit? Despite using `effectively` very high dimensional features?. 
+* The optimisation objective was: $min$  $\lVert \omega \rVerț$ which has the same effect as `Regularisation`. It has a compplicated proof.  
+
+
+#### Overfitting example: Text Classification
+* `100` examples and `10000` dimensional features. 
+* `Logistic Regression` will likely `overfit` the data.
+* `Logistic Regression` with `Regularisation` will outperform `Naive Bayes` 
+- If you want to use `Logistic Regression`, the number of `Training Examples` should be atleast the number of `features`. 
+- 
+
+
