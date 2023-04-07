@@ -911,8 +911,20 @@ How to predict:
 
 #### `Scaling`, subtract `mean` then divide by `standard deviation` is a very good step before applying `Regression` 
 
+* Suppose we have the training set $S =\\{(x^{(i)},y^{(i)}); i = 1,2.......m\\}$
+$$P(\theta|S) = \frac{P(S|\theta)P(\theta)}{P(S)}$$
+* Since $P(S)$ is constant. 
+$$\underset{\theta}{argmax} P(\theta|S)= \underset{\theta}{argmax}P(S|\theta)P(\theta)$$
+* We can take an example $P(S|\theta)= \prod\limits_{1}^{m}P(y^{(i)}|x^{(i)},\theta)$
+* Taking for $P(\theta)$ we assume $\theta \~ N(0, \tau^2I)$. 
+* Solving will give us the `Regularisation Technique` we discussed. 
 
+#### `Frequentist` (MLE) :
+$$\underset{\theta}{argmax} P(S|\theta)$$ 
 
+#### `Bayesian`: (MAP -Maximum a posteriori)
+$$\underset{\theta}{argmax} P(\theta|S)$$ 
+There is some `true` value of $\theta$ which we want to estimate. We assume the data follows `Gaussian Prior` distribution even before we have seen it. 
 
 
 
