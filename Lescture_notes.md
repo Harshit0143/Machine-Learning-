@@ -782,6 +782,9 @@ How to predict:
 * Replace  $\langle x,z\rangle$ in `algorithm` by $K(x,z)$
 
 
+#### The `Crux` that saves computation is that, $\phi(x)$ is very high `dimensional` so computing $\phi(x)$ is expensive. But we actually just need the `relative` comparison between $\phi(x)$ and $\phi(z)$, as f $\langle \phi(x),\phi(z) \rangle$. Which we will `compute` very `fast` 
+
+
 
 
 
