@@ -811,4 +811,14 @@ How to predict:
  <p align="center">
 <img width="800" alt="Screenshot 2023-04-07 at 11 05 23 AM" src="https://user-images.githubusercontent.com/97736991/230547796-3d252045-0e8a-4f4d-9c1c-6b126147bc8e.png"></p>
 
+#### [This video](https://youtu.be/_YPScrckx28?t=101) video a visualisation of what's going on.
+
+#### What makes a kernel `K(x,z)` valid?
+##### Intuitively: 
+* `If` $x$ and $z$ are `similar`, $K(x,z)$ should be large. Otherwise small
+#### 
+* Recall we did in `MTL104` , the conditions for a `valid inner product`.
+###### A very `strong result`
+ <p align="center">
+<img width="957" alt="Screenshot 2023-04-07 at 11 15 04 AM" src="https://user-images.githubusercontent.com/97736991/230548907-898143ac-510c-43d2-9404-1878fb08b457.png"></p>
 
