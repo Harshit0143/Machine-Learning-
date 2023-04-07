@@ -881,7 +881,7 @@ How to predict:
 
 * `Underfitting` (High `Bias`): `Bias`: The learning Algorithm had a `strong` `preconception` that the `data` will fit into `linear model` 
 * `Overfitting` (High `Variance`): Algorithm fits `extremely well` on the `training set` but will do poorly on `prediction`. 
-
+* High `Variance` means a small change in the $x$ will give a `large` (undesirable) change in the `hypothesis` 
 
 # Regularisation 
 
@@ -908,6 +908,5 @@ How to predict:
 * `Logistic Regression` will likely `overfit` the data.
 * `Logistic Regression` with `Regularisation` will outperform `Naive Bayes` 
 - If you want to use `Logistic Regression`, the number of `Training Examples` should be atleast the number of `features`. 
-- 
 
-
+#### `Scaling`, subtract `mean` then divide by `standard deviation` is a very good step before applying `Regression` 
