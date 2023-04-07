@@ -59,6 +59,33 @@
 </p>
 
 * $H$ is the `class` of `hypothesis`. Like the set of all `Logistic Regression hypothesis` 
-* $g$ is the `best posible hypothesis` (the `least` error). It need nOt lie in $H$
+* $g$ is the `best posible hypothesis` (the `least` error). It need not lie in $H$
 * $h^{\*}$ is the `best` `hypothesis` in $H$
-* $\hat{h}$ is any `hypothesis` in $H$ trained from a `fininte` sized `training set`   
+* $\hat{h}$ is any `hypothesis` in $H$ trained from a `fininte` sized `training set` 
+
+#### `Empirical Risk`/ `Empirical Error`
+* It's the fraction of `training examples` in which `prediction` is incorrect. 
+<p align="center">
+<img width="200" alt="Screenshot 2023-04-07 at 8 44 33 PM" src="https://user-images.githubusercontent.com/97736991/230632930-3594e2d1-8673-497a-8fed-1d76bdfb0eee.png">
+ </p>
+ 
+ ### `Generalisation Error`/ `Risk`
+ * It's the `fraction` of `ALL` examples on which `prediction` is incorrect 
+ * You can also write in in the `Expectation-indicator notion`
+<p align="center">
+<img width="200" alt="Screenshot 2023-04-07 at 8 46 24 PM" src="https://user-images.githubusercontent.com/97736991/230633202-f132c0ee-8158-48e8-a6d9-24ff0e8cc2f5.png"> </p>
+
+### `Bayes Error/ Irreducible error` $\epsilon(g)$
+* The `error` made by the `best possible` hypothesis. 
+* Maybe due to, example $D$ giving `2` different $y^{(i)}$'s for the same $x^{(i)}$. No learning algorithm can fix this.
+
+### `Approximation Error`: $\epsilon(h^{\*}) - \epsilon(g)$
+* The `cost` we our paying for limiting ourselves to the `c;ass` we are using.
+
+### `Estimation Error`: $\epsilon(\hat{h}) - \epsilon(h^{\*})$
+* The `cost` of training on a `limited data set` 
+
+* `Notice`: $\epsilon(\hat{h})$ = `Bayes Error` + `Approximation Error` + `Estimation Error`
+#### `Estimation Error` can be further `broken down` into: `Estimation Bias` + `Estimation Variance`
+<p align="center">
+<img width="800" alt="Screenshot 2023-04-07 at 8 58 51 PM" src="https://user-images.githubusercontent.com/97736991/230635316-877744c8-08a9-49cf-985d-fa00aed81919.png"></p>
