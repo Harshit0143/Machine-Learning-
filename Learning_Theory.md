@@ -65,6 +65,7 @@
 
 #### `Empirical Risk`/ `Empirical Error`
 * It's the fraction of `training examples` in which `prediction` is incorrect. 
+* Here $n$ is the number of `training examples`
 <p align="center">
 <img width="200" alt="Screenshot 2023-04-07 at 8 44 33 PM" src="https://user-images.githubusercontent.com/97736991/230632930-3594e2d1-8673-497a-8fed-1d76bdfb0eee.png">
  </p>
@@ -104,6 +105,18 @@
 * You are `shrinking` the $H$ as we are `penalising` the $\omega$ where  $\lVert \omega \rVert$ is large. 
 * Think of it as $\omega = 0$ is present in $H$. 
 
+
+# `ERM` (`Empirical Risk Mimiser`): Another `Learning Algorithm` 
+
+$$\hat{h}_{ERM} = \underset{h \in H}{argmin} \frac{1}{m} \sum \limits_{1}^{m} 𝟙\\{h(x^{(i)}) \neq y^{(i)}\\}$$
+
+or equivalently
+
+<p align="center">
+<img width="325" alt="Screenshot 2023-04-07 at 9 17 27 PM" src="https://user-images.githubusercontent.com/97736991/230637971-202cad87-6fe9-40d6-b372-e510e6ba58e5.png"></p>
+
+* So we we are trying to minimise the `training error`. It is different from the `Maximum Likelihood` we do in `Logistic Regression`
+* It can be shown that it can handle losses like `Logistic Losses`
 
 
 
