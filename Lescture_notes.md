@@ -795,6 +795,20 @@ How to predict:
  <p align="center">
 <img width="223" alt="Screenshot 2023-04-07 at 10 59 41 AM" src="https://user-images.githubusercontent.com/97736991/230547177-7ea2e3d5-c304-40cd-baa2-fac1d919a3a7.png"></p>
 
+* Awesome! We are procession  $\mathcal{O}(n^2)$ `worth` of information in $\mathcal{O}(n)$ time. 
 
+### Example 2
+ <p align="center">
+<img width="381" alt="Screenshot 2023-04-07 at 11 02 42 AM" src="https://user-images.githubusercontent.com/97736991/230547471-1940e6ed-87b3-494d-9cab-781a07cb086c.png"></p>
+
+#### resuts in 
+ <p align="center">
+<img width="458" alt="Screenshot 2023-04-07 at 11 06 19 AM" src="https://user-images.githubusercontent.com/97736991/230547941-38615f09-6152-4224-8c50-e177f7994d54.png">
+</p>
+
+### Example 3
+
+ <p align="center">
+<img width="800" alt="Screenshot 2023-04-07 at 11 05 23 AM" src="https://user-images.githubusercontent.com/97736991/230547796-3d252045-0e8a-4f4d-9c1c-6b126147bc8e.png"></p>
 
 
