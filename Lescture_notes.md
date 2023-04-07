@@ -874,3 +874,12 @@ How to predict:
 ### Protein Sequence Qualifier (with 26 Amino Acids)
 <img width="861" alt="Screenshot 2023-04-07 at 12 13 55 PM" src="https://user-images.githubusercontent.com/97736991/230556366-faa3a353-51f9-428d-b9a2-1bc4d475f552.png">
 * This was about defining features innovatively
+
+
+
+# Bias/ Variance
+
+* `Underfitting` (High `Bias`): `Bias`: The learning Algorithm had a `strong` `preconception` that the `data` will fit into `linear model` 
+* `Overfitting` (High `Variance`): Algorithm fits `extremely well` on the `training set` but will do poorly on `prediction`. 
+
+
