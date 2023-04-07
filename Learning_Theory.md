@@ -89,3 +89,21 @@
 #### `Estimation Error` can be further `broken down` into: `Estimation Bias` + `Estimation Variance`
 <p align="center">
 <img width="800" alt="Screenshot 2023-04-07 at 8 58 51 PM" src="https://user-images.githubusercontent.com/97736991/230635316-877744c8-08a9-49cf-985d-fa00aed81919.png"></p>
+
+# High Bias:
+* Make $H$ bigger so we can `enclose` $g$ in $H$.
+* But now the class is `bigger` so the `variance` increases
+
+# High Variance
+* Make $H$ smakker but this `might` move $\hat{h}$ away from $g$, hence increasing `bias`
+
+
+
+
+#### What regilarisation does?
+* You are `shrinking` the $H$ as we are `penalising` the $\omega$ where  $\lVert \omega \rVert$ is large. 
+* Think of it as $\omega = 0$ is present in $H$. 
+
+
+
+
