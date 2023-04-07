@@ -836,7 +836,26 @@ How to predict:
 ### The `Gaussian Kernel`
  <p align="center">
 <img width="300" alt="Screenshot 2023-04-07 at 11 22 01 AM" src="https://user-images.githubusercontent.com/97736991/230549811-ac0e3d16-872c-43a7-9556-3b103559eed5.png"></p>
+
 * It corresponds to an `infinte dimensional` `feature space` and consists of `ALL monomial features` 
 
+
+#### To any `algorithm` , that can be written in terms of the `inner procucts`, we can apply `Kernel Trick`. `Linear` and `Logistic` `Regression` are some examples. 
+
+## `Soft Margin SVM` 
+* We don't sometimes want a `zero error` boundary. 
+* So far assumed that the data is linearly separable (atleast when `transforming` to a higher `dimension`)
+* While mapping data to a high dimensional feature space does generally increase the likelihood that the data is separable, we
+  can’t guarantee that it always will be so. 
+* In the following example, a single `outlier` `disturbs` the `decision boundary` significantly
+ <p align="center">
+<img width="800" alt="Screenshot 2023-04-07 at 11 36 17 AM" src="https://user-images.githubusercontent.com/97736991/230551514-be953183-4cfd-4b21-8ae4-d288cb2bed49.png"></p>
+
+* To make the algorithm work for `non-linearly separable` datasets as well as be `less sensitive` to `outliers`, we modify the `optimisation problem` 
+ <p align="center">
+<img width="600" alt="Screenshot 2023-04-07 at 11 38 33 AM" src="https://user-images.githubusercontent.com/97736991/230551810-7f6581c7-18f7-4855-8757-dc62564e2890.png"></p>
+
+- Above is called $l_1$ regularisation. 
+- 
 
 
