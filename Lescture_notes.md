@@ -910,3 +910,9 @@ How to predict:
 - If you want to use `Logistic Regression`, the number of `Training Examples` should be atleast the number of `features`. 
 
 #### `Scaling`, subtract `mean` then divide by `standard deviation` is a very good step before applying `Regression` 
+
+
+
+
+
+
