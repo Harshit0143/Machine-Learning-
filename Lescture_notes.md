@@ -730,10 +730,40 @@ $$\gamma^{(i)} = \frac{\hat{\gamma}^{(i)}}{\lVert \omega \rVert } $$
 
 ## The above was subject to the `Separable Assumption`
 
+1) It can be `proved` that the `optimal` $\omega$ can be written as a `liner combination` of `training examples`. 
+$$\omega^{\*} = \sum\limits_{1}^{m} \alpha_ix^{(i)}$$
+* Here `m` is the number of training examples. 
+* THe proof used `induction` on the `iterations` in the `Gradient Descent Algorithm`. Notice that in each `iteration` of the `Gradient Descent`, we 
+add a `linear combination` of $x^{(i)}$'s to `\theta`. 
 
+2) The `vector` $\omega$ is always `orthogonal` to the `decision boundary`. This is simple. You just `prove` that on traversion `orthogonal` to $\omega$, the `hypothesis` $h_\theta(x) = \omega^Tx+b$ does not change    
+<p align="center">
+<img width="741" alt="Screenshot 2023-04-07 at 10 12 17 AM" src="https://user-images.githubusercontent.com/97736991/230542333-38b1a53e-b964-41c5-b30e-f722e42809d2.png"></p>
+
+3) Above is another `intuition` to this.
+- Here we have `3 dimensional` $x^{(i)}$ and all  $x^{(i)}$'s lie in the `XY plane`.
+-  The decision boundary for `3D` soace will be a `2D` plane. (Evident from the expression $\omega^Tx+b)).
+-  Notice that this plane should be `perpendicular` to the `XY plane` as there aren't any $x^{(i)}$'s outside `XY plane` to give information for that `tilt`
+-  Hence clearly, the `normal` to the `decision boundary` can be shown as a `linear combination` of $x^{(i)}$'s. 
+-  Can try other examples like all $x^{(i)}$ on the `X axis` and stil we'll be able to get the `decision boundary`
+
+### We had to solve: 
+<p align="center">
+<img width="400" alt="Screenshot 2023-04-06 at 1 15 43 PM" src="https://user-images.githubusercontent.com/97736991/230309444-a2118f70-4de1-487b-8bfb-02141c646500.png"></p>
+
+* Substituting $\omega^{\*} = \sum\limits_{1}^{m} \alpha_ix^{(i)}$, and `optimisation theory` yields an `equivalent optimisation problem` 
+<p align="center">
+<img width="800" alt="Screenshot 2023-04-07 at 10 28 37 AM" src="https://user-images.githubusercontent.com/97736991/230543948-86c9464e-09be-4dde-ba1c-1a4ae85b07bf.png"></p>
+
+How to predict: 
+* Solve for $\alpha_i$'s (store it). THere are `software packages` that can do that 
+* Given the `optimal` $\omega$, $\omega^{\*}$, the `optimal` $b$,$%b^{\*}$ can be obtained as:  
+<p align="center">
+<img width="748" alt="Screenshot 2023-04-07 at 10 30 43 AM" src="https://user-images.githubusercontent.com/97736991/230544142-3ed48eb8-ad63-44c2-a355-0e5c3445f758.png"></p>
 
 # Kernels   
-4
+
+
 
 
 
